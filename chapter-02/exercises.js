@@ -25,10 +25,18 @@ LOGS =>
 #####
 
 */
-
-function triangles() {
+//function triangles takes a single number parameter
+function triangles(num) {
+  let stackLevel = "#";
+  //loop through the values of num starting at 1
+  for (let i = 1; i <= num; i++){
+    console.log(stackLevel);
+    stackLevel += "#";
+    
+  }
   
 }
+console.log(triangles(5));
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -48,7 +56,22 @@ on the number:
 */
 
 function fizzBuzz(start, end) {
-  
+  //loop through number range
+  for (let i = start; i <= end; i++){
+    //check if the index is divisible by 3 AND 5
+    if (i % 3 === 0 && i % 5 === 0){
+      console.log("fizzbuzz");
+      //check if index is divisible by 3 only
+    } else if (i % 3 === 0){
+      console.log("fizz");
+      //check if index is divisible by 5 only
+    } else if (i % 5 === 0){
+      console.log("buzz");
+    } else {
+      //or else just print the index
+      console.log(i);
+    }
+  }
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -81,11 +104,46 @@ LOGS =>
 
 */
 
+console.log("string");
+
 function drawChessboard(x) {
 
 
+  //assign square "colors" to variables
+
+  let wRow = [];
+  let bRow = [];
+
+  //iterate x times to create rows
+  for (let i = 0; i < x; i++){
+    //check if i is even
+    if (i % 2 === 0){
+      wRow.push(" ");
+      bRow.push("#");
+    } else {
+      wRow.push("#");
+      bRow.push(" ");
+    }
+  }
+  
+  // console.log("wRow:  " + wRow);
+  // console.log("bRow:  " + bRow);
+  
+  //empty string
+  let retStr = "";
+  //iterate x times to stack rows
+  for (let i = 0; i < x; i++){
+    if (i % 2 === 0){
+      retStr += wRow.join("") + "\n";
+  } else {
+      retStr += bRow.join("") + "\n"
+  }
+}
+  console.log(retStr);
+  // return retStr;
 }
 
+console.log(drawChessboard(4));
 ////////////////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE //////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
