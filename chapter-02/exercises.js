@@ -118,6 +118,7 @@ function drawChessboard(x) {
   for (let i = 0; i < x; i++){
     //check if i is even
     if (i % 2 === 0){
+      //fill out the rows with alternating "#" and " "
       wRow.push(" ");
       bRow.push("#");
     } else {
